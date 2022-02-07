@@ -1,0 +1,14 @@
+#Query
+//Mostrará todos alunos que tem matrículas com número menor que 1111111111 e com nome diferente de Marcos
+db.aluno.find({matricula: {$lte: 1111111111},nome: {$ne: "Marcos"}})
+//Mostrará todos alunos que tiraram notas maiores ou iguais a 9
+db.aluno.find({"avaliacoes.nota": {$gte: 9.00}})
+//Mostrará todos alunos que tiraram notas menores que 8.8
+db.aluno.find({"avaliacoes.nota": {$lt: 8.80}})
+
+#Update
+//Atualizará o todos que possuem o nome de "Andre", adicionando um acento no e
+db.aluno.update({nome: "Andre"}, {$set: {nome: "André"}})
+db.aluno.find()
+// Atualizará a descrição da primeira prova de português
+db.avaliacao.updateOne({_id: ObjectId("61e56c4ce8725f4241b4386d")}, {$set: {descricao: "Primeira avaliacao de portugues"}})

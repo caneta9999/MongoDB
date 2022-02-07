@@ -1,0 +1,38 @@
+//Jogo
+array = [
+{
+	nome: "Jogo 1", 
+	descricao: "..."
+},
+{
+	nome: "Jogo 2",
+	descricao: "..."
+}
+]
+db.jogo.insert(array)
+db.jogo.find().pretty()
+//Jogador
+array = [
+{
+	nome: "Andre", 
+	idade: 18,
+	gameplay: [{_id: ObjectId("61e5cc5735e6461a9c59d848")}]
+},
+{
+	nome:"Marcos", 
+	idade: 19,
+	gameplay: [{_id: ObjectId("61e5cc5735e6461a9c59d848")}]
+}, 
+{
+	nome:"Rebeca", 
+	idade:20,
+	gameplay: [{_id: ObjectId("61e5cc5735e6461a9c59d848")},{_id: ObjectId("61e5cc5735e6461a9c59d849")}]
+},
+{
+	nome:"Julio", 
+	idade: 18,
+	gameplay: [{_id: ObjectId("61e5cc5735e6461a9c59d849")}]
+}
+]
+db.jogador.insert(array)
+db.jogador.find().pretty()

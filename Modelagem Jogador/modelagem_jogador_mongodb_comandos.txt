@@ -1,0 +1,23 @@
+#Query
+//Mostrará todos os jogadores com idade igual ou maior que 19
+db.jogador.find({"idade": {$gte: 19}})
+//Mostrará todos os jogadores com idade igual a 18
+db.jogador.find({"idade": {$eq: 18}})
+//Mostrará todos os jogadores que jogaram o jogo 1 (o jogo com esse id na hora da criação)
+db.jogador.find({"gameplay._id": ObjectId("61e5cc5735e6461a9c59d848")})
+
+#Update
+//Atualizará o jogador com idade 18 colocando sua idade como 19
+db.jogador.update({idade: 18}, {$set: {idade: 19}})
+db.jogador.find()
+//Atualizará o jogador com idade 19, somando 30 com a idade atual do jogador
+db.jogador.update({idade: 19},{$inc: {idade: 30}})
+db.jogador.find()
+
+#Delete
+//Apagará o primeiro jogador com nome Marcos
+db.jogador.deleteOne({nome: "Marcos"})
+db.jogador.find()
+//Apagará todos os jogadores
+db.jogador.deleteMany({})
+db.jogador.find()

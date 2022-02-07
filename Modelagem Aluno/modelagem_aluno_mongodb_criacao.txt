@@ -1,0 +1,41 @@
+//Avaliação
+custArray = [{ nome: "Avaliacao 1 de Portugues", descricao: "..."}, {nome: "Avaliacao 2 de Matematica", descricao: "..."}]
+db.avaliacao.insert(custArray)
+db.avaliacao.find()
+//Aluno
+db.aluno.insert(
+{
+	nome: "Andre",
+	matricula: 1010101010,
+	descricao_aluno: "O aluno X realizou com exito suas tarefas enquanto aluno da instituicao ...",
+	ocorrencias: 
+	[
+	{
+		nome: "Faltou na aula",
+		descricao: "...",
+		data: "2019-03-12"
+	},
+	{
+		nome: "Usou celular durante a aula",
+		descricao: "...",
+		data: "2019-04-18"
+	}
+	],
+	avaliacoes:
+	[
+	{
+		_id: ObjectId("61e56c4ce8725f4241b4386d"),
+		nome: "Avaliacao 1 de Portugues",
+		data: "2019-03-22",
+		nota: 8.80
+	},
+	{
+		_id: ObjectId("61e56c4ce8725f4241b4386e"),
+		nome: "Avaliacao 2 de Matematica",
+		data: "2019-05-21",
+		nota: 8.50
+	}
+	]
+}
+)
+db.aluno.find().pretty()
